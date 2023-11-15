@@ -1,3 +1,4 @@
-import Wrapper from './Wrapper'; // Giả sử tệp này ở cùng thư mục
+// Popper/index.js
 
 export { default as Wrapper } from './Wrapper';
+// other exports, if any
