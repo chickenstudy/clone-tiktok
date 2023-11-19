@@ -10,9 +10,11 @@ import {
   faSignOut,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
+import config from '~/config';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -95,7 +97,9 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <img src={images.logo} alt="Tiktok" />
+        <Link to={config.routes.home} className={cx('logo-link')}>
+          <img src={images.logo} alt="Tiktok" />
+        </Link>
 
         <Search />
 
@@ -115,7 +119,7 @@ function Header() {
               <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                 <button className={cx('action-btn')}>
                   <InboxIcon />
-                  <span className={cx('badge')}>15</span>
+                  <span className={cx('badge')}>12</span>
                 </button>
               </Tippy>
             </>
@@ -130,7 +134,7 @@ function Header() {
             {currentUser ? (
               <Image
                 className={cx('user-avatar')}
-                src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/358115133_3568240746827154_4644488903831173338_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ZKx8cYuEObUAX-rLQ02&_nc_ht=scontent.fhan14-2.fna&oh=00_AfChJU6Y0mOZmSPjZ3cEatQQXK12gdp0OamSVuRCjJxMxw&oe=655793E0"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/358115133_3568240746827154_4644488903831173338_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YXd4vIO45pQAX9lKY37&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDquXDJtPyZQyU_EnRD3Y4u_O1jKTjP7nZhcmJD3sZGVA&oe=655B8860"
                 alt="Nguyen Van A"
               />
             ) : (
